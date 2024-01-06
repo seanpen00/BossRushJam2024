@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw5rvwkul0gjx"]
+
+[ext_resource type="PackedScene" uid="uid://djo8fwonht5yo" path="res://Scenes/player.tscn" id="1_cm1tv"]
+[ext_resource type="Script" path="res://Scenes/GameLogic.gd" id="1_pep67"]
+[ext_resource type="PackedScene" uid="uid://dh480ncn8yp0u" path="res://Scenes/boss_one.tscn" id="3_ria2h"]
+
+[node name="MainGame" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_pep67")
+
+[node name="Player" parent="." instance=ExtResource("1_cm1tv")]
+position = Vector2(698, 386)
+
+[node name="BossOne" parent="." instance=ExtResource("3_ria2h")]
+position = Vector2(356, 198)
