@@ -2,9 +2,9 @@ extends Node
 
 # BULLET
 var BULLET_PROJECTILE : PackedScene = preload("res://Scenes/Weapons/Bullet/bullet.tscn")
-var BULLET_DAMAGE : int = 5
+var BULLET_DAMAGE : int = 3
 var BULLET_RANGE : int = 1000
-var BULLET_SPEED : int = 400
+var BULLET_SPEED : int = 1200
 # On Pick-up (value for player)
 var BULLET_COOLDOWN : float = .5
 

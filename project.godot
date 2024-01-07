@@ -21,6 +21,7 @@ PlayerStats="*res://player_stats.gd"
 GameSignals="*res://game_signals.gd"
 BossStats="*res://boss_stats.gd"
 Weapons="*res://weapons.gd"
+Augments="*res://augments.gd"
 
 [input]
 

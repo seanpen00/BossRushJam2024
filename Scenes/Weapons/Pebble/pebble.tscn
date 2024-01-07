@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://rif2jvcdmsuv"]
+[gd_scene load_steps=5 format=3 uid="uid://rif2jvcdmsuv"]
 
 [ext_resource type="Script" path="res://Scenes/Weapons/Pebble/pebble.gd" id="1_b5ucd"]
 [ext_resource type="Texture2D" uid="uid://kq7ikk4u2d5b" path="res://Scenes/Weapons/Pebble/pebble.png" id="1_tqvtr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_shsr1"]
 radius = 65.0308
+
+[sub_resource type="Curve2D" id="Curve2D_xn3qx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 95.3596, -1.78947, 0, 0, 0, 0, 210.926, -186.526, 0, 0, 0, 0, 318.845, -220.395, 0, 0, 0, 0, 453.106, -210.132, 0, 0, 0, 0, 521.936, -166)
+}
+point_count = 5
 
 [node name="Pebble" type="Area2D"]
 script = ExtResource("1_b5ucd")
@@ -17,3 +23,13 @@ texture = ExtResource("1_tqvtr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_shsr1")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-114.22, 4.74359)
+scale = Vector2(1.17681, 0.974359)
+curve = SubResource("Curve2D_xn3qx")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(95.3596, -1.78947)
+rotation = -1.01178
+loop = false
