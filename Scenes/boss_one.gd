@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var HEALTH = 100
+var HEALTH = BossStats.BOSS_ONE_HEALTH
 
 func _physics_process(delta):
 	pass
@@ -13,8 +13,9 @@ func takeDamage(value):
 	
 func die():
 	queue_free()
+	PlayerStats.changePlayerMoney(BossStats.BOSS_ONE_MONEY_VALUE)
 
 
 func _on_hitbox_area_entered(area):
-	if (area.has_method("getDamage")):
+	if (area.is_in_group("player_weapon")):
 		takeDamage(area.getDamage())

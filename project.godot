@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 PlayerStats="*res://player_stats.gd"
 GameSignals="*res://game_signals.gd"
+BossStats="*res://boss_stats.gd"
+Weapons="*res://weapons.gd"
 
 [input]
 

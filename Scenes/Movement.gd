@@ -4,8 +4,9 @@ var currentWeapon
 var weaponSlot = 0
 
 func _ready():
+	PlayerStats.setWeaponInSlot(1,Weapons.BULLET)
+	PlayerStats.setWeaponInSlot(2,Weapons.BULLET)
 	pass
-	PlayerStats.WEAPON_SLOT_1 = load("res://Scenes/bullet.tscn");
 
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")

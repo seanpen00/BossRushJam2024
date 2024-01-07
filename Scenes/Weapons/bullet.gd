@@ -1,13 +1,13 @@
 extends Area2D
 
-var speed = 400
-@export var damage = 5
+var speed = Weapons.BULLET_SPEED
+var damage = Weapons.BULLET_DAMAGE
 
 var mousePos
 var mousePosGot = false
 
 var travelled_distance = 0
-var RANGE = 1000
+var RANGE = Weapons.BULLET_RANGE
 
 func _physics_process(delta):
 	if mousePosGot == false:

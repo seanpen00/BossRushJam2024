@@ -22,6 +22,10 @@ func setPlayerSpeed(value:int):
 	PLAYER_SPEED = value
 func changePlayerSpeed(value:int):
 	PLAYER_SPEED += value
+func setPlayerMoney(value:int):
+	MONEY = value
+func changePlayerMoney(value:int):
+	MONEY += value
 	
 func getWeaponFromSlot(value:int):
 	if value == 1:
@@ -35,5 +39,14 @@ func getWeaponFromSlot(value:int):
 	else:
 		return -1 # Invalid value
 
+func setWeaponInSlot(slot:int, weapon:PackedScene):
+	if slot == 1:
+		WEAPON_SLOT_1 = weapon
+	if slot == 2:
+		WEAPON_SLOT_2 = weapon
+	if slot == 3:
+		WEAPON_SLOT_3 = weapon
+	if slot == 4:
+		WEAPON_SLOT_4 = weapon
 
 
