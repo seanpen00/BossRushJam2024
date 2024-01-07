@@ -17,5 +17,5 @@ func die():
 
 
 func _on_hitbox_area_entered(area):
-	if (area.is_in_group("player_weapon")):
+	if (area.is_in_group("player_projectile")):
 		takeDamage(area.getDamage())

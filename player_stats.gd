@@ -6,10 +6,10 @@ var PLAYER_SPEED : int = 600
 var MONEY : int = 0
 
 # Weapons
-var WEAPON_SLOT_1 : PackedScene
-var WEAPON_SLOT_2 : PackedScene
-var WEAPON_SLOT_3 : PackedScene
-var WEAPON_SLOT_4 : PackedScene
+var WEAPON_SLOT_1 : PackedScene = null
+var WEAPON_SLOT_2 : PackedScene = null
+var WEAPON_SLOT_3 : PackedScene = null
+var WEAPON_SLOT_4 : PackedScene = null
 
 var UPGRADES = []
 
@@ -37,7 +37,7 @@ func getWeaponFromSlot(value:int):
 	elif value == 4:
 		return WEAPON_SLOT_4
 	else:
-		return -1 # Invalid value
+		return null # Invalid value
 
 func setWeaponInSlot(slot:int, weapon:PackedScene):
 	if slot == 1:

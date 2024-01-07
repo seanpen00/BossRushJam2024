@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://rif2jvcdmsuv"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/Pebble/pebble.gd" id="1_b5ucd"]
+[ext_resource type="Texture2D" uid="uid://kq7ikk4u2d5b" path="res://Scenes/Weapons/Pebble/pebble.png" id="1_tqvtr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_shsr1"]
+radius = 65.0308
+
+[node name="Pebble" type="Area2D"]
+script = ExtResource("1_b5ucd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -14)
+scale = Vector2(0.216, 0.216)
+texture = ExtResource("1_tqvtr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_shsr1")

@@ -1,7 +1,17 @@
 extends Node
 
 # BULLET
-var BULLET : PackedScene = preload("res://Scenes/Weapons/bullet.tscn")
-var BULLET_DAMAGE = 5
-var BULLET_RANGE = 1000
-var BULLET_SPEED = 400
+var BULLET_PROJECTILE : PackedScene = preload("res://Scenes/Weapons/Bullet/bullet.tscn")
+var BULLET_DAMAGE : int = 5
+var BULLET_RANGE : int = 1000
+var BULLET_SPEED : int = 400
+# On Pick-up (value for player)
+var BULLET_COOLDOWN : float = .5
+
+# PEBBLE
+var PEBBLE_PROJECTILE : PackedScene = preload("res://Scenes/Weapons/Pebble/pebble.tscn")
+var PEBBLE_DAMAGE : int = 15
+var PEBBLE_RANGE : int = 500
+var PEBBLE_SPEED : int = 200
+# On Pick-up (value for player)
+var PEBBLE_COOLDOWN : float = .5
