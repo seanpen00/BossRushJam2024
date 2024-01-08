@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://djo8fwonht5yo"]
 
-[ext_resource type="Script" path="res://Scenes/Movement.gd" id="1_2n3nr"]
+[ext_resource type="Script" path="res://Scenes/Player/Player/PlayerScript.gd" id="1_2n3nr"]
 [ext_resource type="Texture2D" uid="uid://dxt0waf4yu2oc" path="res://icon.svg" id="1_pmsoy"]
 [ext_resource type="PackedScene" uid="uid://k7hcwlau36ul" path="res://Scenes/ui.tscn" id="3_aa0e2"]
 
@@ -39,10 +39,10 @@ position = Vector2(0, -1)
 
 [node name="Control" parent="." instance=ExtResource("3_aa0e2")]
 unique_name_in_owner = true
-offset_left = -1133.0
+offset_left = -1154.0
 offset_top = -640.0
-offset_right = -1133.0
-offset_bottom = -640.0
+offset_right = 1171.0
+offset_bottom = 648.0
 
 [node name="Weapon1Timer" type="Timer" parent="."]
 

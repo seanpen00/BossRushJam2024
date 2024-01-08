@@ -9,12 +9,13 @@ extends Node2D
 @export var HEALTH : int
 @export var MONEY_VALUE : int
 @export var WEAPON_LIST : Array[PackedScene]
-@export var ATTACK_COOLDOWN_1 : float = 1
-@export var ATTACK_COOLDOWN_2 : float = 1
-@export var ATTACK_COOLDOWN_3 : float = 1
+@export var ATTACK_COOLDOWN_1 : float
+@export var ATTACK_COOLDOWN_2 : float
+@export var ATTACK_COOLDOWN_3 : float
 var canAttack_1 : bool = true
 var canAttack_2 : bool = true
 var canAttack_3 : bool = true
+var player : CharacterBody2D
 
 func _ready():
 	$AttackCooldown_1.wait_time = ATTACK_COOLDOWN_1
@@ -24,17 +25,16 @@ func _ready():
 func _physics_process(delta):
 	if canAttack_1 and WEAPON_LIST.size() > 0:
 		attack_1()
-	if canAttack_2 and WEAPON_LIST.size() >= 1:
+	if canAttack_2 and WEAPON_LIST.size() > 1:
 		attack_2()
-	if canAttack_3 and WEAPON_LIST.size() >= 2:
+	if canAttack_3 and WEAPON_LIST.size() > 2:
 		attack_3()
 
 func attack_1():
 	if (WEAPON_LIST[0]):
 		canAttack_1 = false
 		$AttackCooldown_1.start()
-		var currentWeapon = WEAPON_LIST[0]
-		currentWeapon.instantiate()
+		var currentWeapon = WEAPON_LIST[0].instantiate()
 		owner.add_child(currentWeapon)
 		currentWeapon.transform = $ProjectileOrigin.global_transform
 		
@@ -42,8 +42,7 @@ func attack_2():
 	if (WEAPON_LIST[1]):
 		canAttack_2 = false
 		$AttackCooldown_2.start()
-		var currentWeapon = WEAPON_LIST[1]
-		currentWeapon.instantiate()
+		var currentWeapon = WEAPON_LIST[1].instantiate()
 		owner.add_child(currentWeapon)
 		currentWeapon.transform = $ProjectileOrigin.global_transform
 
@@ -51,8 +50,7 @@ func attack_3():
 	if (WEAPON_LIST[2]):
 		canAttack_3 = false
 		$AttackCooldown_3.start()
-		var currentWeapon = WEAPON_LIST[2]
-		currentWeapon.instantiate()
+		var currentWeapon = WEAPON_LIST[2].instantiate()
 		owner.add_child(currentWeapon)
 		currentWeapon.transform = $ProjectileOrigin.global_transform
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dh480ncn8yp0u"]
+[gd_scene load_steps=8 format=3 uid="uid://dh480ncn8yp0u"]
 
-[ext_resource type="Texture2D" uid="uid://ddl0ortqxh42o" path="res://bossbaby.png" id="1_07ba8"]
-[ext_resource type="Script" path="res://boss_template.gd" id="1_x2esr"]
+[ext_resource type="Texture2D" uid="uid://ddl0ortqxh42o" path="res://Scenes/Bosses/BossOne/bossbaby.png" id="1_07ba8"]
+[ext_resource type="Script" path="res://Scenes/Bosses/BossTemplates/boss_template.gd" id="1_x2esr"]
+[ext_resource type="PackedScene" uid="uid://nnk08mss8qiq" path="res://Scenes/Bosses/BossWeapons/boss_bullet.tscn" id="2_5f17w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h77b1"]
 size = Vector2(435, 516.5)
@@ -33,6 +34,10 @@ HitboxCollider = NodePath("Hitbox/HitboxCollider")
 HealthBar = NodePath("HealthBar")
 HEALTH = 100
 MONEY_VALUE = 300
+WEAPON_LIST = Array[PackedScene]([ExtResource("2_5f17w")])
+ATTACK_COOLDOWN_1 = 2.0
+ATTACK_COOLDOWN_2 = 2.0
+ATTACK_COOLDOWN_3 = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_07ba8")

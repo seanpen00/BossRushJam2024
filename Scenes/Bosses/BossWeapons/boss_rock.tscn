@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4np24fmfvakk"]
+
+[ext_resource type="Script" path="res://Scenes/Bosses/BossWeapons/Templates/boss_projectile_template.gd" id="1_3irjw"]
+[ext_resource type="Texture2D" uid="uid://cinjaymp3qqg8" path="res://Scenes/Bosses/BossWeapons/rock.png" id="2_ju1a1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dcpq"]
+size = Vector2(117, 100)
+
+[node name="BossRock" type="Area2D"]
+script = ExtResource("1_3irjw")
+speed = 600
+damage = 50
+range = 2000
+facePlayer = false
+targetPlayer = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("2_ju1a1")
+
+[node name="Hurtbox" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 14)
+shape = SubResource("RectangleShape2D_7dcpq")
+debug_color = Color(0.898039, 0, 0.152941, 0.419608)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

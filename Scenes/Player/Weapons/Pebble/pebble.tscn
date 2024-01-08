@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://rif2jvcdmsuv"]
 
-[ext_resource type="Script" path="res://Scenes/Weapons/Pebble/pebble.gd" id="1_b5ucd"]
-[ext_resource type="Texture2D" uid="uid://kq7ikk4u2d5b" path="res://Scenes/Weapons/Pebble/pebble.png" id="1_tqvtr"]
+[ext_resource type="Script" path="res://Scenes/Player/Weapons/Pebble/pebble.gd" id="1_b5ucd"]
+[ext_resource type="Texture2D" uid="uid://kq7ikk4u2d5b" path="res://Scenes/Player/Weapons/Pebble/pebble.png" id="1_tqvtr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_shsr1"]
 radius = 65.0308

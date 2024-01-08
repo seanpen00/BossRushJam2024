@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kq7ikk4u2d5b"
-path="res://.godot/imported/pebble.png-354d073e6d249ee537147ed62b2f8547.ctex"
+uid="uid://dusdce6fw1b4v"
+path="res://.godot/imported/bullet.png-c7b00041227a578b9e5ac587519dae96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Weapons/Pebble/pebble.png"
-dest_files=["res://.godot/imported/pebble.png-354d073e6d249ee537147ed62b2f8547.ctex"]
+source_file="res://Scenes/Player/Weapons/Bullet/bullet.png"
+dest_files=["res://.godot/imported/bullet.png-c7b00041227a578b9e5ac587519dae96.ctex"]
 
 [params]
 

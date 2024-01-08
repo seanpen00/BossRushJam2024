@@ -17,11 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-PlayerStats="*res://player_stats.gd"
-GameSignals="*res://game_signals.gd"
-BossStats="*res://boss_stats.gd"
-Weapons="*res://weapons.gd"
-Augments="*res://augments.gd"
+PlayerStats="*res://Scenes/GlobalScenes/player_stats.gd"
+GameSignals="*res://Scenes/GlobalScenes/game_signals.gd"
+BossStats="*res://Scenes/GlobalScenes/boss_stats.gd"
+Weapons="*res://Scenes/GlobalScenes/weapons.gd"
+Augments="*res://Scenes/GlobalScenes/augments.gd"
 
 [input]
 

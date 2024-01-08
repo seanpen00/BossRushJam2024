@@ -67,13 +67,13 @@ func attack(weaponSlot):
 		currentWeapon.transform = $ProjectileOrigin.global_transform
 		
 func takeDamage(value):
-	PlayerStats.changePlayerHealth(value)
+	PlayerStats.changePlayerHealth(value*-1)
 	changeHealth()
 	if (PlayerStats.PLAYER_HEALTH <= 0):
 		die()
 	
 func die():
-	queue_free()
+	get_tree().paused = true
 	PlayerStats.setPlayerMoney(0)
 
 func changeHealth():

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b63nogbekue0q"]
 
-[ext_resource type="Script" path="res://boss_template.gd" id="1_s5n2d"]
+[ext_resource type="Script" path="res://Scenes/Bosses/BossTemplates/boss_template.gd" id="1_s5n2d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h77b1"]
 size = Vector2(435, 516.5)
@@ -30,6 +30,7 @@ HurtboxCollider = NodePath("Hurtbox/HurtboxCollider")
 Hitbox = NodePath("Hitbox")
 HitboxCollider = NodePath("Hitbox/HitboxCollider")
 HealthBar = NodePath("HealthBar")
+ATTACK_COOLDOWN_1 = 0.1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
