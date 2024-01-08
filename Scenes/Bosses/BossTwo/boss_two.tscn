@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://crkvd4d12n7ci"]
+
+[ext_resource type="Script" path="res://Scenes/Bosses/BossTemplates/boss_template.gd" id="1_c70gm"]
+[ext_resource type="Texture2D" uid="uid://dxt0waf4yu2oc" path="res://icon.svg" id="2_03dip"]
+[ext_resource type="PackedScene" uid="uid://nnk08mss8qiq" path="res://Scenes/Bosses/BossWeapons/boss_bullet.tscn" id="2_kktuu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h77b1"]
+size = Vector2(107, 421)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_whix4"]
+size = Vector2(148, 459)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl3hb"]
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67rco"]
+bg_color = Color(1, 0.254902, 0.176471, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="BossTwo" type="Node2D" node_paths=PackedStringArray("Sprite", "Hurtbox", "HurtboxCollider", "Hitbox", "HitboxCollider", "HealthBar")]
+script = ExtResource("1_c70gm")
+Sprite = NodePath("Sprite2D")
+Hurtbox = NodePath("Hurtbox")
+HurtboxCollider = NodePath("Hurtbox/HurtboxCollider")
+Hitbox = NodePath("Hitbox")
+HitboxCollider = NodePath("Hitbox/HitboxCollider")
+HealthBar = NodePath("HealthBar")
+HEALTH = 200
+MONEY_VALUE = 500
+WEAPON_LIST = Array[PackedScene]([ExtResource("2_kktuu")])
+ATTACK_COOLDOWN_1 = 1.0
+ATTACK_COOLDOWN_2 = 1.0
+ATTACK_COOLDOWN_3 = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4, -0.999992)
+scale = Vector2(0.9375, 3.46875)
+texture = ExtResource("2_03dip")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="HurtboxCollider" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-5.5, 1.5)
+shape = SubResource("RectangleShape2D_h77b1")
+debug_color = Color(0.996078, 0, 0, 0.419608)
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="HitboxCollider" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-1, -2.5)
+shape = SubResource("RectangleShape2D_whix4")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -191.0
+offset_top = -299.0
+offset_right = 196.0
+offset_bottom = -247.0
+theme_override_styles/background = SubResource("StyleBoxFlat_dl3hb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_67rco")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="AttackCooldown_1" type="Timer" parent="."]
+
+[node name="AttackCooldown_2" type="Timer" parent="."]
+
+[node name="AttackCooldown_3" type="Timer" parent="."]
+
+[node name="ProjectileOrigin" type="Marker2D" parent="."]
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="AttackCooldown_1" to="." method="_on_attack_cooldown_1_timeout"]
+[connection signal="timeout" from="AttackCooldown_2" to="." method="_on_attack_cooldown_2_timeout"]
+[connection signal="timeout" from="AttackCooldown_3" to="." method="_on_attack_cooldown_3_timeout"]

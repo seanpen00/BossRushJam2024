@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpeelbk1se7hv"]
+
+[ext_resource type="Script" path="res://Scenes/Bosses/BossWeapons/Templates/boss_projectile_template.gd" id="1_frfnf"]
+[ext_resource type="Texture2D" uid="uid://dxt0waf4yu2oc" path="res://icon.svg" id="2_oegrn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dcpq"]
+size = Vector2(107, 112)
+
+[node name="boss_orb" type="Area2D"]
+script = ExtResource("1_frfnf")
+speed = 1000
+damage = 100
+range = 4000
+facePlayer = false
+targetPlayer = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_oegrn")
+
+[node name="Hurtbox" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_7dcpq")
+debug_color = Color(0.898039, 0, 0.152941, 0.419608)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
