@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://nnk08mss8qiq"]
 
 [ext_resource type="Script" path="res://Scenes/Bosses/BossWeapons/Templates/boss_projectile_template.gd" id="1_xfk4j"]
-[ext_resource type="Texture2D" uid="uid://dxt0waf4yu2oc" path="res://icon.svg" id="2_65054"]
+[ext_resource type="Texture2D" uid="uid://qixiwvh6kxbx" path="res://Scenes/Bosses/BossWeapons/bullet.png" id="2_obgfd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dcpq"]
-size = Vector2(135, 42)
+size = Vector2(119, 47)
 
 [node name="BossBullet" type="Area2D"]
 script = ExtResource("1_xfk4j")
@@ -14,10 +14,12 @@ range = 1200
 targetPlayer = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1, 0.28125)
-texture = ExtResource("2_65054")
+rotation = 0.785398
+scale = Vector2(-0.333072, -0.333072)
+texture = ExtResource("2_obgfd")
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, -0.5)
 shape = SubResource("RectangleShape2D_7dcpq")
 debug_color = Color(0.898039, 0, 0.152941, 0.419608)
 
