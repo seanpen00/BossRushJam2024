@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy46002n81xhk"]
+
+[ext_resource type="Script" path="res://Scenes/BossWeapons/boss_projectile_template.gd" id="1_n1vos"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dcpq"]
+size = Vector2(105, 96)
+
+[node name="BossProjectileTemplate" type="Area2D"]
+script = ExtResource("1_n1vos")
+
+[node name="Hurtbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7dcpq")
+debug_color = Color(0.898039, 0, 0.152941, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

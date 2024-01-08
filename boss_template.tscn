@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dh480ncn8yp0u"]
+[gd_scene load_steps=6 format=3 uid="uid://b63nogbekue0q"]
 
-[ext_resource type="Texture2D" uid="uid://ddl0ortqxh42o" path="res://bossbaby.png" id="1_07ba8"]
-[ext_resource type="Script" path="res://boss_template.gd" id="1_x2esr"]
+[ext_resource type="Script" path="res://boss_template.gd" id="1_s5n2d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h77b1"]
 size = Vector2(435, 516.5)
@@ -24,18 +23,15 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="BossTemplate" type="Node2D" node_paths=PackedStringArray("Sprite", "Hurtbox", "HurtboxCollider", "Hitbox", "HitboxCollider", "HealthBar")]
-script = ExtResource("1_x2esr")
+script = ExtResource("1_s5n2d")
 Sprite = NodePath("Sprite2D")
 Hurtbox = NodePath("Hurtbox")
 HurtboxCollider = NodePath("Hurtbox/HurtboxCollider")
 Hitbox = NodePath("Hitbox")
 HitboxCollider = NodePath("Hitbox/HitboxCollider")
 HealthBar = NodePath("HealthBar")
-HEALTH = 100
-MONEY_VALUE = 300
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_07ba8")
 
 [node name="Hurtbox" type="Area2D" parent="."]
 
@@ -46,7 +42,6 @@ debug_color = Color(0.996078, 0, 0, 0.419608)
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="HitboxCollider" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_whix4")
 
 [node name="HealthBar" type="ProgressBar" parent="."]

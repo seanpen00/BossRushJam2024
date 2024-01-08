@@ -66,8 +66,18 @@ func attack(weaponSlot):
 		owner.add_child(currentWeapon)
 		currentWeapon.transform = $ProjectileOrigin.global_transform
 		
+func takeDamage(value):
+	PlayerStats.changePlayerHealth(value)
+	changeHealth()
+	if (PlayerStats.PLAYER_HEALTH <= 0):
+		die()
+	
+func die():
+	queue_free()
+	PlayerStats.setPlayerMoney(0)
 
-
+func changeHealth():
+	$HealthBar.value = PlayerStats.PLAYER_HEALTH
 
 
 func _on_weapon_1_timer_timeout():
