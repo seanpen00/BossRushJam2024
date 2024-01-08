@@ -1,10 +1,15 @@
 extends Area2D
 
+## Speed of projectile
 @export var speed : int
+## Damage projectile does to player
 @export var damage : int
+## Range of projectile
 @export var range : int
 ## This is for making some projectiles face the player while some don't face the player.
 @export var facePlayer : bool = true
+## Whether or not to target player, i.e. if the projectile 
+## is aimed towards the player or aimed otherwise (ex: random directional projectiles).
 @export var targetPlayer : bool = false
 var playerTargeted = false
 var directionAttained = false
