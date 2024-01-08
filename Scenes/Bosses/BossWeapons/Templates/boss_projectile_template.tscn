@@ -6,6 +6,7 @@
 size = Vector2(544, 468)
 
 [node name="BossProjectileTemplate" type="Area2D"]
+scale = Vector2(0.991382, 1)
 script = ExtResource("1_n1vos")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
