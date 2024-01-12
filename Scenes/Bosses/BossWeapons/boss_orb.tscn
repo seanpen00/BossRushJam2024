@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bpeelbk1se7hv"]
+[gd_scene load_steps=11 format=3 uid="uid://bpeelbk1se7hv"]
 
 [ext_resource type="Script" path="res://Scenes/Bosses/BossWeapons/Templates/boss_projectile_template.gd" id="1_frfnf"]
 [ext_resource type="Texture2D" uid="uid://bftkxc2xvfbgh" path="res://Scenes/Bosses/BossWeapons/Bolt.png" id="2_g828r"]
 [ext_resource type="Script" path="res://Scenes/Bosses/BossWeapons/bolt_animation_script.gd" id="3_qr24b"]
+[ext_resource type="AudioStream" uid="uid://du0nql1nc7yky" path="res://Scenes/Bosses/BossWeapons/Boss_Bolt_noise.mp3" id="4_rkrpl"]
 
 [sub_resource type="Animation" id="Animation_ap3ka"]
 resource_name = "Bolt_loop"
@@ -76,6 +77,14 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_pvjvx")
 }
+
+[node name="BoltSound" type="AudioStreamPlayer2D" parent="Sprite2D"]
+position = Vector2(4.33333, -1.56866e-05)
+rotation = -1.5708
+scale = Vector2(0.333333, 0.333333)
+stream = ExtResource("4_rkrpl")
+volume_db = -6.559
+bus = &"SFX"
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
 position = Vector2(24, -12)
