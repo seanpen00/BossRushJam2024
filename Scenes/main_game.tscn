@@ -15,8 +15,8 @@ position = Vector2(698, 386)
 
 [node name="BossOne" parent="." instance=ExtResource("3_ria2h")]
 WEAPON_LIST = Array[PackedScene]([ExtResource("6_3iwgh")])
-ATTACK_COOLDOWN_1 = 1.0
-ATTACK_COOLDOWN_2 = 1.0
+ATTACK_COOLDOWN_1 = 0.1
+ATTACK_COOLDOWN_2 = 0.1
 ATTACK_COOLDOWN_3 = 0.1
 
 [node name="Dungeon" parent="." instance=ExtResource("6_ngwnc")]
