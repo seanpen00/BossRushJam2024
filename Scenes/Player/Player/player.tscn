@@ -62,6 +62,9 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_hqath")
 value = 100.0
 show_percentage = false
 
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(9, -271)
+
 [connection signal="timeout" from="Weapon1Timer" to="." method="_on_weapon_1_timer_timeout"]
 [connection signal="timeout" from="Weapon2Timer" to="." method="_on_weapon_2_timer_timeout"]
 [connection signal="timeout" from="Weapon3Timer" to="." method="_on_weapon_3_timer_timeout"]
