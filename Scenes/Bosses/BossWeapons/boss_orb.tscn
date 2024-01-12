@@ -1,25 +1,74 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpeelbk1se7hv"]
+[gd_scene load_steps=7 format=3 uid="uid://bpeelbk1se7hv"]
 
 [ext_resource type="Script" path="res://Scenes/Bosses/BossWeapons/Templates/boss_projectile_template.gd" id="1_frfnf"]
-[ext_resource type="Texture2D" uid="uid://dxt0waf4yu2oc" path="res://icon.svg" id="2_oegrn"]
+[ext_resource type="Texture2D" uid="uid://bftkxc2xvfbgh" path="res://Scenes/Bosses/BossWeapons/Bolt.png" id="2_g828r"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dcpq"]
-size = Vector2(107, 112)
+[sub_resource type="Animation" id="Animation_ap3ka"]
+resource_name = "Bolt_loop"
+length = 0.55
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8yg8c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pvjvx"]
+_data = {
+"Bolt_loop": SubResource("Animation_ap3ka"),
+"RESET": SubResource("Animation_8yg8c")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a61qd"]
+radius = 29.0
+height = 122.0
 
 [node name="boss_orb" type="Area2D"]
 script = ExtResource("1_frfnf")
-speed = 1000
-damage = 100
+speed = 500
+damage = 10
 range = 4000
-facePlayer = false
 targetPlayer = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_oegrn")
+position = Vector2(0, -13)
+rotation = 1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("2_g828r")
+hframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_pvjvx")
+}
 
 [node name="Hurtbox" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -1)
-shape = SubResource("RectangleShape2D_7dcpq")
+position = Vector2(24, -12)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_a61qd")
 debug_color = Color(0.898039, 0, 0.152941, 0.419608)
 
 [node name="Marker2D" type="Marker2D" parent="."]
