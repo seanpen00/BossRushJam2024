@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bw5rvwkul0gjx"]
+[gd_scene load_steps=7 format=3 uid="uid://bw5rvwkul0gjx"]
 
 [ext_resource type="PackedScene" uid="uid://djo8fwonht5yo" path="res://Scenes/Player/Player/player.tscn" id="1_cm1tv"]
 [ext_resource type="Script" path="res://Scenes/GameLogic.gd" id="1_pep67"]
 [ext_resource type="PackedScene" uid="uid://dh480ncn8yp0u" path="res://Scenes/Bosses/BossOne/boss_one.tscn" id="3_ria2h"]
 [ext_resource type="PackedScene" uid="uid://d4np24fmfvakk" path="res://Scenes/Bosses/BossWeapons/boss_rock.tscn" id="5_eajuj"]
 [ext_resource type="PackedScene" uid="uid://bpeelbk1se7hv" path="res://Scenes/Bosses/BossWeapons/boss_orb.tscn" id="6_3iwgh"]
+[ext_resource type="PackedScene" uid="uid://ba0bc5t40t8ql" path="res://Scenes/Dungeon.tscn" id="6_ngwnc"]
 
 [node name="MainGame" type="Node2D"]
 y_sort_enabled = true
@@ -18,3 +19,6 @@ WEAPON_LIST = Array[PackedScene]([ExtResource("6_3iwgh"), ExtResource("5_eajuj")
 ATTACK_COOLDOWN_1 = 1.0
 ATTACK_COOLDOWN_2 = 1.0
 ATTACK_COOLDOWN_3 = 0.1
+
+[node name="Dungeon" parent="." instance=ExtResource("6_ngwnc")]
+z_index = -3
