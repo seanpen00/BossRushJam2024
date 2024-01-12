@@ -8,7 +8,7 @@ size = Vector2(117, 100)
 
 [node name="BossRock" type="Area2D"]
 script = ExtResource("1_3irjw")
-speed = 600
+speed = 1200
 damage = 50
 range = 2000
 facePlayer = false

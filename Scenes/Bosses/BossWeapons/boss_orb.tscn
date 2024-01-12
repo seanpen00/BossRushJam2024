@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpeelbk1se7hv"]
+[gd_scene load_steps=8 format=3 uid="uid://bpeelbk1se7hv"]
 
 [ext_resource type="Script" path="res://Scenes/Bosses/BossWeapons/Templates/boss_projectile_template.gd" id="1_frfnf"]
 [ext_resource type="Texture2D" uid="uid://bftkxc2xvfbgh" path="res://Scenes/Bosses/BossWeapons/Bolt.png" id="2_g828r"]
+[ext_resource type="Script" path="res://Scenes/Bosses/BossWeapons/bolt_animation_script.gd" id="3_qr24b"]
 
 [sub_resource type="Animation" id="Animation_ap3ka"]
 resource_name = "Bolt_loop"
@@ -59,8 +60,10 @@ rotation = 1.5708
 scale = Vector2(3, 3)
 texture = ExtResource("2_g828r")
 hframes = 6
+script = ExtResource("3_qr24b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_pvjvx")
 }

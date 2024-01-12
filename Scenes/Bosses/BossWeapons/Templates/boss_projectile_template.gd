@@ -20,8 +20,6 @@ var direction : Vector2
 func _ready():
 	add_to_group("boss_projectiles")
 
-	$Sprite2D/AnimationPlayer.play("Bolt_loop")
-
 func _physics_process(delta):
 	# Get direction of movement
 	if targetPlayer and playerTargeted == false and directionAttained == false:
