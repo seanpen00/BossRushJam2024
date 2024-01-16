@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dh480ncn8yp0u" path="res://Scenes/Bosses/BossOne/boss_one.tscn" id="3_ria2h"]
 [ext_resource type="PackedScene" uid="uid://d4np24fmfvakk" path="res://Scenes/Bosses/BossWeapons/boss_rock.tscn" id="5_ffu4d"]
 [ext_resource type="PackedScene" uid="uid://cyb0fcexsgg2b" path="res://Scenes/Bosses/BossWeapons/boss_orb.tscn" id="6_3iwgh"]
-[ext_resource type="PackedScene" path="res://Scenes/Dungeon.tscn" id="6_ngwnc"]
+[ext_resource type="PackedScene" uid="uid://ba0bc5t40t8ql" path="res://Scenes/Dungeon.tscn" id="6_ngwnc"]
 
 [node name="MainGame" type="Node2D"]
 y_sort_enabled = true
@@ -17,7 +17,7 @@ position = Vector2(698, 386)
 [node name="BossOne" parent="." instance=ExtResource("3_ria2h")]
 WEAPON_LIST = Array[PackedScene]([ExtResource("6_3iwgh"), ExtResource("5_ffu4d")])
 ATTACK_COOLDOWN_1 = 0.1
-ATTACK_COOLDOWN_2 = 0.1
+ATTACK_COOLDOWN_2 = 0.8
 ATTACK_COOLDOWN_3 = 0.1
 
 [node name="Dungeon" parent="." instance=ExtResource("6_ngwnc")]

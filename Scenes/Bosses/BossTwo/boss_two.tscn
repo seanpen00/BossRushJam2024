@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://crkvd4d12n7ci"]
 
 [ext_resource type="Script" path="res://Scenes/Bosses/BossTemplates/boss_template.gd" id="1_c70gm"]
-[ext_resource type="Texture2D" uid="uid://dxt0waf4yu2oc" path="res://icon.svg" id="2_03dip"]
 [ext_resource type="PackedScene" uid="uid://nnk08mss8qiq" path="res://Scenes/Bosses/BossWeapons/boss_bullet.tscn" id="2_kktuu"]
+[ext_resource type="Texture2D" uid="uid://c06x8i5v1thoh" path="res://Scenes/Bosses/BossTwo/Flesh rectangle.png" id="3_vvg3i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h77b1"]
 size = Vector2(107, 421)
@@ -40,9 +40,9 @@ ATTACK_COOLDOWN_2 = 1.0
 ATTACK_COOLDOWN_3 = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-4, -0.999992)
-scale = Vector2(0.9375, 3.46875)
-texture = ExtResource("2_03dip")
+position = Vector2(5, -11)
+scale = Vector2(0.144, 0.213)
+texture = ExtResource("3_vvg3i")
 
 [node name="Hurtbox" type="Area2D" parent="."]
 
