@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ba0bc5t40t8ql"]
+[gd_scene load_steps=6 format=3 uid="uid://bk5i5g36wem60"]
 
 [ext_resource type="Texture2D" uid="uid://bntfl8us0gh84" path="res://Scenes/Bosses/BossWeapons/Revamp walls.png" id="1_bva1y"]
 [ext_resource type="Texture2D" uid="uid://bboelb0fse3o6" path="res://Scenes/Bosses/BossWeapons/Extra walls.png" id="2_41iy1"]

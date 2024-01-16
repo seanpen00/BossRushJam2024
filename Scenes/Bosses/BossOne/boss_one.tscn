@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dh480ncn8yp0u"]
 
 [ext_resource type="Texture2D" uid="uid://ddl0ortqxh42o" path="res://Scenes/Bosses/BossOne/bossbaby.png" id="1_07ba8"]
-[ext_resource type="Script" path="res://Scenes/Bosses/BossTemplates/boss_template.gd" id="1_x2esr"]
+[ext_resource type="Script" path="res://Scenes/Bosses/BossOne/boss_one.gd" id="1_31cnk"]
 [ext_resource type="PackedScene" uid="uid://nnk08mss8qiq" path="res://Scenes/Bosses/BossWeapons/boss_bullet.tscn" id="2_5f17w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h77b1"]
@@ -24,8 +24,8 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="BossTemplate" type="Node2D" node_paths=PackedStringArray("Sprite", "Hurtbox", "HurtboxCollider", "Hitbox", "HitboxCollider", "HealthBar")]
-script = ExtResource("1_x2esr")
+[node name="BossOne" type="Node2D" node_paths=PackedStringArray("Sprite", "Hurtbox", "HurtboxCollider", "Hitbox", "HitboxCollider", "HealthBar")]
+script = ExtResource("1_31cnk")
 Sprite = NodePath("Sprite2D")
 Hurtbox = NodePath("Hurtbox")
 HurtboxCollider = NodePath("Hurtbox/HurtboxCollider")
@@ -72,6 +72,7 @@ show_percentage = false
 [node name="AttackCooldown_3" type="Timer" parent="."]
 
 [node name="ProjectileOrigin" type="Marker2D" parent="."]
+scale = Vector2(0.998546, 1)
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="AttackCooldown_1" to="." method="_on_attack_cooldown_1_timeout"]

@@ -59,7 +59,7 @@ height = 122.0
 
 [node name="boss_orb" type="Area2D"]
 script = ExtResource("1_frfnf")
-speed = 500
+speed = 400
 damage = 10
 range = 1000
 targetPlayer = true

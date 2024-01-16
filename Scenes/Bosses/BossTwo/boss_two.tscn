@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://crkvd4d12n7ci"]
 
-[ext_resource type="Script" path="res://Scenes/Bosses/BossTemplates/boss_template.gd" id="1_c70gm"]
+[ext_resource type="Script" path="res://Scenes/Bosses/BossTwo/boss_two.gd" id="1_n7782"]
 [ext_resource type="PackedScene" uid="uid://nnk08mss8qiq" path="res://Scenes/Bosses/BossWeapons/boss_bullet.tscn" id="2_kktuu"]
 [ext_resource type="Texture2D" uid="uid://c06x8i5v1thoh" path="res://Scenes/Bosses/BossTwo/Flesh rectangle.png" id="3_vvg3i"]
 
@@ -25,12 +25,12 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="BossTwo" type="Node2D" node_paths=PackedStringArray("Sprite", "Hurtbox", "HurtboxCollider", "Hitbox", "HitboxCollider", "HealthBar")]
-script = ExtResource("1_c70gm")
+script = ExtResource("1_n7782")
 Sprite = NodePath("Sprite2D")
 Hurtbox = NodePath("Hurtbox")
 HurtboxCollider = NodePath("Hurtbox/HurtboxCollider")
 Hitbox = NodePath("Hitbox")
-HitboxCollider = NodePath("Hitbox/HitboxCollider")
+HitboxCollider = NodePath("Hurtbox/HurtboxCollider")
 HealthBar = NodePath("HealthBar")
 HEALTH = 200
 MONEY_VALUE = 500
